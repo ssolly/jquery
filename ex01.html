@@ -2,9 +2,40 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>jquery ex01</title>
+<script src="jquery-3.6.0.min.js"></script> <!-- 다운로드 후 파일의 경로 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 웹과 연결된 버전 -->
+<script type="text/javascript">
+	/* 3개 다 같은 의미 */
+	//1
+	$(document).ready(function(){		 
+	//현재 페이지가 준비가 되면 function()을 실행해주세요
+		console.log("111")
+	})
+	//2
+	$().ready(function() {
+		console.log("222")
+	})
+	//3
+	$(function() {
+		console.log("333")
+		$("button" /*태그 종류*/).click(function() {
+			$("p").hide();
+		})
+		$("#show").click(function() {
+			$("p").show()
+		})
+	})
+	//4 (3과 4는 같은 역할)
+	function my_show() {
+		$("#p").hide();
+		document.getElementById("p").style.display="none"; 
+	}
+</script>
 </head>
 <body>
-
+	<p id="p">안녕하세요</p>
+	<button type="button" onclick="my_show()"> 클릭</button>
+	<button id="show">show</button>
 </body>
 </html>
